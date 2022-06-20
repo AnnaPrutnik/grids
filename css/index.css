@@ -46,10 +46,16 @@ ul {
 .header {
   grid-area: header;
   background-color: #181407;
+  background-image: url('../images/bg.jpg');
+  background-size: contain;
+  color: #0a0a2a;
+  font-weight: 700;
   padding: 15px;
   display: grid;
   align-items: center;
-  grid-template: 1fr /1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+  grid-template:
+    1fr /1fr minmax(auto, 150px) minmax(auto, 150px) minmax(auto, 1100px)
+    1fr;
 }
 
 .header__logo {
@@ -61,8 +67,14 @@ ul {
   grid-column: 2/3;
 }
 
-.header__menu {
+.duration {
+  display: grid;
+  justify-items: center;
   grid-column: 3/4;
+}
+
+.header__menu {
+  grid-column: 4/5;
 }
 
 .header__list {
@@ -81,6 +93,11 @@ ul {
   padding: 30px 15px;
   display: grid;
   grid-template: 1fr /1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+  background-image: url('../images/bg-main.jpg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h1 {
