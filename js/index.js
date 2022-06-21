@@ -1,12 +1,13 @@
 'use strict';
 
+// Animated counter with duration of war in header
+
 window.addEventListener('load', windowLoad);
 
 function counterInit(defaultCounter) {
   let counter = defaultCounter
     ? defaultCounter
-    : document.querySelector('[data-animation-date');
-  console.log(counter);
+    : document.querySelector('[data-animation-date]');
 
   if (counter) {
     animatedCounter(counter);
@@ -15,7 +16,7 @@ function counterInit(defaultCounter) {
 
 function animatedCounter(counter) {
   let startTimestamp = null;
-  const duration = 1500;
+  const duration = 1000;
   const dateInSeconds = new Date() - new Date('2022-02-23');
   const startValue = Math.floor(dateInSeconds / 1000 / 60 / 60 / 24);
   const startPosition = 0;
