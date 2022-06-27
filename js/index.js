@@ -14,6 +14,13 @@ function counterInit(defaultCounter) {
   }
 }
 
+async function windowLoad() {
+  counterInit();
+  // await loadGalleryImages();
+}
+
+// Counter for duration of war
+
 function animatedCounter(counter) {
   let startTimestamp = null;
   const duration = 1000;
@@ -33,6 +40,17 @@ function animatedCounter(counter) {
   window.requestAnimationFrame(step);
 }
 
-function windowLoad() {
-  counterInit();
+// API for Gallery
+
+const BASE_URL = 'https://pixabay.com/api/';
+const KEY_API = '28297687-8f7efcb9f303a01fdf33b7dd3';
+const PER_PAGE = 12;
+
+async function loadGalleryImages() {
+  const images = await fetch(
+    `${BASE_URL}?q=ukraine&page=1&key=${KEY_API}&image_type=photo&orientation=horizontal&per_page=${PER_PAGE}`
+  )
+    .then((res) => res.json())
+    .then((data) => data.hits);
+  return images;
 }
