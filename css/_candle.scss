@@ -1,0 +1,119 @@
+//CodePen Home
+// CSS Candle
+// author Chokcoco
+
+$count: 200;
+
+.candle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: -350px;
+  left: 100px;
+  transform: translate(-50%, -50%);
+
+  &__body {
+    position: relative;
+    width: 50px;
+    height: 150px;
+    margin: 140px auto;
+
+    background: linear-gradient(230deg, #ca9800, #573903, black 70%);
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 50px;
+      height: 20px;
+      border-radius: 50%;
+
+      box-sizing: border-box;
+      top: -10px;
+      background: radial-gradient(#a46800, #5c3104 45%, #905602 100%);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 24px;
+      background: #fff;
+      left: 50%;
+      top: -11px;
+      transform: translate(-50%, -50%);
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.8) 60%,
+        #fff
+      );
+      opacity: 0.7;
+      filter: blur(1px);
+    }
+  }
+
+  &__firebox {
+    position: absolute;
+    top: 90px;
+    left: 52%;
+    width: 70px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    filter: blur(2px) contrast(20);
+  }
+
+  &__fire {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    border-radius: 45%;
+    box-sizing: border-box;
+    border: 60px solid #000;
+    border-bottom: 50px solid transparent;
+    transform: translate(-50%, 0) scaleX(0.45);
+    background-color: #761b00;
+  }
+
+  &__ball {
+    position: absolute;
+    top: 10px;
+    transform: translate(0, 0);
+    background: #fa8763;
+    border-radius: 50%;
+    z-index: -1;
+    mix-blend-mode: screen;
+  }
+}
+
+@for $i from 1 to $count {
+  .candle__ball:nth-child(#{$i}) {
+    $width: #{random(40)}px;
+
+    width: $width;
+    height: $width;
+    left: calc(#{(random(30))}px - 40px);
+  }
+
+  .candle__ball:nth-child(#{$i}) {
+    animation: movetop 1s linear -#{(calc((random(3000)) / 1000))}s infinite;
+  }
+}
+
+@keyframes movetop {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  87.7% {
+    transform: translate(0, -70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -70px);
+    opacity: 0;
+  }
+}
