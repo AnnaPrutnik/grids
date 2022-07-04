@@ -54,3 +54,23 @@ async function loadGalleryImages() {
     .then((data) => data.hits);
   return images;
 }
+
+// Open modal with picture from gallery
+
+const refs = {
+  openModal: document.querySelector('[data-open-modal]'),
+  closeModalBtn: document.querySelector('[data-close-modal]'),
+  backdrop: document.querySelector('[data-backdrop]'),
+};
+
+refs.openModal.addEventListener('click', toggleModal);
+refs.closeModalBtn.addEventListener('click', toggleModal);
+refs.backdrop.addEventListener('click', backdropClick);
+
+function toggleModal() {
+  refs.backdrop.classList.toggle('is-hidden');
+}
+
+function backdropClick(e) {
+  e.target.dataset.backdrop === '' && toggleModal();
+}

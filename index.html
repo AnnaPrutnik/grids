@@ -22,10 +22,68 @@
             <li class="header__item">
               <a href="#famous" class="header__link link">Визначні діячі</a>
             </li>
-            <li class="header__item">
-              <a href="#resource" class="header__link link"
+            <li class="header__item resourse-header">
+              <a
+                href="#resource"
+                class="header__link link resourse-header__title"
                 >Джерела інформації</a
               >
+              <ul class="resourse-header__list">
+                <li class="resourse-header__item">
+                  <a
+                    href="https://www.president.gov.ua/ua"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Офіс Президента України</a
+                  >
+                </li>
+                <li class="resourse-header__item">
+                  <a
+                    href="https://www.mil.gov.ua/"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Міністерство Оборони України</a
+                  >
+                </li>
+                <li class="resourse-header__item">
+                  <a
+                    href="https://www.zsu.gov.ua/"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Збройні Сили України</a
+                  >
+                </li>
+                <li class="resourse-header__item">
+                  <a
+                    href="https://ssu.gov.ua/"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Cлужба Безнеки України</a
+                  >
+                </li>
+                <li class="resourse-header__item">
+                  <a
+                    href="https://www.npu.gov.ua/"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Національна Поліція України</a
+                  >
+                </li>
+                <li class="resourse-header__item">
+                  <a
+                    href="https://dsns.gov.ua/"
+                    class="resourse-header__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Державна Служба України з надзвичайних ситуації</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="header__item">
               <a href="#" class="header__link link">Header 4</a>
@@ -368,7 +426,7 @@
             <h2 class="resource__title">
               Обирайте лише офіційні джерела інформації
             </h2>
-            <ul class="resource__list">
+            <ul class="resource__list is-hidden">
               <li class="resource__item">
                 <img
                   src="./images/resource/president.jfif"
@@ -793,6 +851,7 @@
               </li>
             </ul>
           </section>
+          <!-- <section class="content__"></section> -->
           <section class="content__galerry gallery" id="gallery">
             <h2 class="gallery__title">Gallery</h2>
             <ul class="gallery__list">
@@ -801,6 +860,7 @@
                   src="./images/gallery/foto1.jpeg"
                   alt="Ukraine"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -808,6 +868,7 @@
                   src="./images/gallery/foto4.jpg"
                   alt="Kalina"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -815,6 +876,7 @@
                   src="./images/gallery/foto2.webp"
                   alt="Ukrainian field"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -822,6 +884,7 @@
                   src="./images/gallery/foto5.jpeg"
                   alt="Good evening, we are from Ukraine"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item gallery__item-big">
@@ -829,6 +892,7 @@
                   src="./images/gallery/foto3.jpg"
                   alt="Symbol of Ukraine"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
 
@@ -837,6 +901,7 @@
                   src="./images/gallery/foto6.jpg"
                   alt="Ukrainian army"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -851,6 +916,7 @@
                   src="./images/gallery/foto8.jpg"
                   alt="Ukrainian history"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -858,6 +924,7 @@
                   src="./images/gallery/foto9.jpg"
                   alt="Ukrainian flag"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
               <li class="gallery__item">
@@ -865,6 +932,7 @@
                   src="./images/gallery/foto10.jpg"
                   alt="Peace"
                   class="gallery__image"
+                  data-open-modal
                 />
               </li>
             </ul>
@@ -878,6 +946,13 @@
           <span> Україна понад усе!</span>
         </div>
       </footer>
+      <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+          <button class="modal__close" data-close-modal>+</button>
+
+          <h3>Here will be the big picture</h3>
+        </div>
+      </div>
     </div>
     <script src="./js/index.js" type="module"></script>
   </body>
